@@ -71,3 +71,26 @@ tabs.forEach(tab => {
         tab.classList.add('qualification__active')
     })
 })
+
+/*==================== SERVICES MODAL ====================*/
+const modelViews = document.querySelectorAll('.services__model'),
+    modelBtns = document.querySelectorAll('.services__button'),
+    modelCloses = document.querySelectorAll('.services__model-close')
+
+let model = function(modelClick) {
+    modelViews[modelClick].classList.add('active-model')
+}
+
+modelBtns.forEach((modelBtns, i) => {
+    modelBtns.addEventListener('click', () => {
+        model(i)
+    })
+})
+
+modelCloses.forEach((modelClose) => {
+    modelClose.addEventListener('click', () => {
+        modelViews.forEach((modelView) => {
+            modelView.classList.remove('active-model')
+        })
+    })
+})
